@@ -128,7 +128,6 @@ export class Post {
     let stage = 0;
     name.addEventListener("click", (e) => {
       stage = (stage + 1) % 3;
-      console.log("Clicked text ", stage);
 
       if (stage === 0) {
         name.innerText = artist;
