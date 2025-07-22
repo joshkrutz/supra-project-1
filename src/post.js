@@ -90,6 +90,8 @@ export class Post {
 
       postContainer.style.gridRowEnd = `span ${num_rows}`;
 
+      image.loading = "lazy";
+
       // Remove skeleton
       postContainer.classList.remove("skeleton");
     };
@@ -124,13 +126,14 @@ export class Post {
     name.innerHTML = `${artist}`;
     name.classList.add("name");
     let stage = 0;
-    name.addEventListener("click", () => {
+    name.addEventListener("click", (e) => {
       stage = (stage + 1) % 3;
+      console.log("Clicked text ", stage);
 
       if (stage === 0) {
-        name.innerText = title;
-      } else if (stage === 1) {
         name.innerText = artist;
+      } else if (stage === 1) {
+        name.innerText = title;
       } else {
         name.innerText = objectDate;
       }
