@@ -16,3 +16,11 @@ addEventListener("load", async (event) => {
   // Create post elements
   loadXImages(50);
 });
+
+//If we are close to the bottom of the screen, load more
+addEventListener("scroll", function () {
+  if (innerHeight + scrollY >= document.documentElement.scrollHeight) {
+    window.scrollBy({ top: -110, behavior: "smooth" });
+    loadXImages(10);
+  }
+});
